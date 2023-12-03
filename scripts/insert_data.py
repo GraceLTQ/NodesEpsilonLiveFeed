@@ -1,26 +1,19 @@
-from azure.cosmos import CosmosClient
 import json
-import azure.cosmos.documents as documents
-import azure.cosmos.cosmos_client as cosmos_client
-import azure.cosmos.exceptions as exceptions
-from azure.cosmos.partition_key import PartitionKey
-import datetime
-import config
+import os
+from azure.cosmos import CosmosClient
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
 
 
-HOST = config.settings['host']
-MASTER_KEY = config.settings['master_key']
-DATABASE_ID = config.settings['database_id']
-CONTAINER_ID = config.settings['container_id']
+url = os.getenv('AZURE_URL')
+key = os.getenv('AZURE_KEY')
+database_name = os.getenv('AZURE_DATABASE')
+container_name = os.getenv('AZURE_CONTAINER')
 
 
 def upload_data_to_cosmosdb(json_file):
-
-    # Define your Azure Cosmos DB configuration
-    url = 'https://epsilonemaildatabase.documents.azure.com:443/'
-    key = 'VNkD0GSMS0hwUPGEenMI0oK99P1kUzpUaZXyNxY9TyYkOOrwb8En4amZFs6mXec4FqZ16iEiwaXvACDbHuXGxA=='
-    database_name = 'EpsilonEmailDatabase'
-    container_name = 'EpsilonEmailContainer'
 
     # Initialize the Cosmos client
     client = CosmosClient(url, credential=key)

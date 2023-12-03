@@ -1,7 +1,16 @@
 import base64
 import binascii
+import json
+import os
+from azure.cosmos import CosmosClient
+from dotenv import load_dotenv
 
-key = "1ZBGL41X7gK0Wu6YPIjp673qUUpEtGF2nMXZUSrWAfEDdJA0MZ7DNRPafZ2wPbmHqURj5CV7dxkoACDbVmHCQg=="
+# Load .env file
+load_dotenv()
+
+
+key = os.getenv('key')
+
 try:
     decoded_key = base64.b64decode(key)
     print("Key is valid Base64")
