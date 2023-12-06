@@ -46,3 +46,19 @@ td {
   width: 250px;
   font-size: 20px;
 }
+
+.sidebar {
+  flex: 1;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
+
+.main-content {
+  flex: 4;
+  padding: 10px;
+}
+
+.sidebar button {
+  display: block;
+  margin-bottom: 10px;
+}
