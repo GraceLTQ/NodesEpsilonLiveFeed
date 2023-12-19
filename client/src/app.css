@@ -2,8 +2,8 @@
   margin: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 900px;
+  align-items: normal;
+  width: 1200px;
 }
 
 
@@ -26,7 +26,7 @@
 }
 
 table {
-  width: 100%;
+  width: 300%;
   margin: 50px 0px;
   border-spacing: 15px;
   color: #444;
@@ -49,12 +49,12 @@ td {
 
 .sidebar {
   flex: 1;
-  border-right: 1px solid #ccc;
+  border-right: 0px solid #ccc;
   padding: 10px;
 }
 
 .main-content {
-  flex: 4;
+  flex: 1;
   padding: 10px;
 }
 
